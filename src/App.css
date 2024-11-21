@@ -1,0 +1,116 @@
+/* 슬라이더의 외부 컨테이너 스타일 */
+.slider-outer {
+  max-width: 1000px;          /* 슬라이더의 최대 너비 설정 */
+  margin: 0 auto;             /* 중앙 정렬 */
+  padding: 20px;              /* 내부 여백 */
+  position: relative;         /* 자식 요소의 위치 기준점 설정 */
+  overflow: hidden;           /* 슬라이더를 벗어나는 콘텐츠 숨김 */
+}
+
+/* 컨트롤 버튼 그룹 스타일 */
+.controls {
+  display: flex;              /* 버튼들을 가로로 배치 */
+  gap: 8px;                  /* 버튼 사이의 간격 */
+  justify-content: flex-end;  /* 버튼들을 오른쪽으로 정렬 */
+  margin-bottom: 20px;        /* 하단 여백 */
+}
+
+/* 개별 컨트롤 버튼 스타일 */
+.control-button {
+  width: 30px;               /* 버튼 너비 */
+  height: 30px;              /* 버튼 높이 */
+  display: flex;             /* 버튼 내부 콘텐츠 중앙 정렬을 위한 설정 */
+  align-items: center;       /* 세로 중앙 정렬 */
+  justify-content: center;   /* 가로 중앙 정렬 */
+  border: none;              /* 테두리 제거 */
+  background: transparent;    /* 배경 투명 처리 */
+  cursor: pointer;           /* 마우스 오버 시 포인터 커서 */
+  transition: transform 0.3s ease; /* 호버 효과 애니메이션 */
+  padding: 6px;              /* 내부 여백 */
+}
+
+/* 버튼 호버 효과 */
+.control-button:hover {
+  transform: translateY(-2px);  /* 마우스 오버 시 버튼이 위로 살짝 떠오르는 효과 */
+}
+
+/* 버튼 내부 이미지 스타일 */
+.control-button img {
+  width: 100%;               /* 이미지를 버튼에 맞게 조절 */
+  height: 100%;              /* 이미지를 버튼에 맞게 조절 */
+  object-fit: contain;       /* 이미지 비율 유지하며 맞춤 */
+}
+
+/* 슬라이더 트랙 스타일 - 실제 슬라이드되는 영역 */
+.slider-track {
+  display: flex;             /* 카드들을 가로로 배치 */
+  width: 300%;               /* 전체 아이템을 3번 복제하기 위한 너비 설정 */
+}
+
+/* 개별 뉴스 카드 컨테이너 스타일 */
+.news-card {
+  width: calc(100% / 12);    /* 한 화면에 4개의 카드가 보이도록 설정 (전체 너비의 1/12) */
+  flex-shrink: 0;            /* 카드가 줄어들지 않도록 설정 */
+  padding: 15px;             /* 카드 간 여백 */
+  box-sizing: border-box;    /* 패딩을 너비에 포함 */
+  aspect-ratio: 1/1;         /* 카드를 정사각형으로 유지 */
+}
+
+/* 뉴스 카드 내부 article 스타일 */
+.news-card article {
+  background: white;         /* 카드 배경색 */
+  border-radius: 12px;       /* 모서리 둥글게 */
+  padding: 20px;             /* 내부 여백 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);  /* 그림자 효과 */
+  height: 100%;              /* 부모 높이에 맞춤 */
+  display: flex;             /* 내부 요소 세로 배치 */
+  flex-direction: column;    /* 세로 방향으로 배치 */
+  gap: 10px;                /* 요소들 사이 간격 */
+}
+
+/* 뉴스 이미지 플레이스홀더 스타일 */
+.news-image {
+  width: 100%;              /* 카드 너비에 맞춤 */
+  height: 50%;              /* 카드 높이의 50% */
+  background: #f0f0f0;      /* 배경색 설정 */
+  border-radius: 8px;       /* 모서리 둥글게 */
+  margin: 0;                /* 마진 제거 */
+}
+
+/* 뉴스 제목 스타일 */
+.news-title {
+  font-size: 16px;          /* 글자 크기 */
+  font-weight: bold;        /* 글자 굵기 */
+  color: #333;              /* 글자 색상 */
+  margin: 0;                /* 마진 제거 */
+  /* 두 줄 이상일 때 말줄임표 처리 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;    /* 최대 2줄까지만 표시 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;         /* 줄 간격 */
+  height: auto;             /* 높이 자동 조절 */
+}
+
+/* 뉴스 설명 스타일 */
+.news-description {
+  font-size: 14px;          /* 글자 크기 */
+  color: #666;              /* 글자 색상 */
+  margin: 0;                /* 마진 제거 */
+  /* 두 줄 이상일 때 말줄임표 처리 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;    /* 최대 2줄까지만 표시 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;         /* 줄 간격 */
+  height: auto;             /* 높이 자동 조절 */
+}
+
+/* 뉴스 날짜 스타일 */
+time.news-date {
+  font-size: 13px;          /* 글자 크기 */
+  color: #999;              /* 글자 색상 */
+  margin-top: auto;         /* 날짜를 카드 하단에 고정 */
+}
